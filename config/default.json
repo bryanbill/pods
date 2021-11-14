@@ -1,0 +1,42 @@
+{
+  "name": "Pods",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "settings": {
+    "cache": {
+      "enabled": true,
+      "force-check": {
+        "enabled": true,
+        "interval": "1h"
+      },
+      "expiration": {
+        "max_age": "0"
+      },
+      "db": {
+        "type": "redis",
+        "host": "localhost",
+        "port": 6379
+      }
+    },
+
+    "database": {
+      "host": "env.database.host",
+      "port": "env.database.port",
+      "name": "env.database.name",
+      "username": "env.database.username",
+      "password": "env.database.password"
+    },
+    "server": {
+      "host": "env.server.host",
+      "port": "env.server.port",
+      "locations": "env.server.locations"
+    },
+    "storage": {
+      "host": "env.storage.host",
+      "port": "env.storage.port",
+      "username": "env.storage.username",
+      "password": "env.storage.password"
+    }
+  }
+}

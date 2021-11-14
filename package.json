@@ -1,0 +1,33 @@
+{
+  "name": "pods",
+  "version": "0.0.1",
+  "description": "Pods is a distributed engine powering the services offered by Soloo",
+  "main": "./build/index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanbill/pods.git"
+  },
+  "keywords": [
+    "Pods",
+    "Soloo",
+    "Engine"
+  ],
+  "author": "Bryan Omondi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryanbill/pods/issues"
+  },
+  "homepage": "https://github.com/bryanbill/pods#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7"
+  }
+}
