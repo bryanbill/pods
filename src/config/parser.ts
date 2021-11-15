@@ -1,11 +1,13 @@
 import fs from "fs";
 import { env } from "process";
 import { EnvProps } from "src/global/types";
-class Parser {
+import dotEnv from "dotenv";
+export class Parser {
   private file: string;
   private struc: EnvProps | undefined;
   constructor(filePath: string) {
     this.file = filePath;
+    dotEnv.config();
   }
 
   private parseFile(): EnvProps {
@@ -28,9 +30,9 @@ class Parser {
           db: obj.settings.cache.db,
         },
         database: {
+          username: obj.settings.database.username,
           host: obj.settings.database.host,
           port: obj.settings.database.port,
-          user: obj.settings.database.user,
           password: obj.settings.database.password,
           database: obj.settings.database.database,
         },

@@ -5,46 +5,36 @@ export type EnvProps = {
   };
   settings: {
     cache: {
-      [key: string]:
-        | string
-        | boolean
-        | {
-            forceCheck: {
-              [key: string]: string | boolean;
-            };
-            expiration: {
-              [key: string]: string | boolean;
-            };
-            db: {
-              [key: string]: {
-                type: string;
-                host: string;
-                port: number;
-              };
-            };
-          };
-    };
-    database: {
-      [key: string]: {
-        host: string;
-        port: string;
-        database: string;
-        username: string;
-        password: string;
+      enabled: string | boolean;
+      forceCheck: {
+        enabled: string | boolean;
+        interval: string;
       };
+      expiration: {
+        max_age: string | boolean;
+      };
+      db: {
+        type: string;
+        host: string;
+        port: number;
+      };
+    };
+
+    database: {
+      host: string;
+      port: string;
+      database: string;
+      username: string;
+      password: string;
     };
     server: {
-      [key: string]: {
-        host: string;
-        port: string;
-        locations: string;
-      };
+      host: string;
+      port: string;
+      locations: string;
     };
     storage: {
-      [key: string]: {
-        host: string;
-        port: string;
-      };
+      host: string;
+      port: string;
     };
   };
 };
