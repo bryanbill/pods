@@ -1,4 +1,5 @@
 import fs from "fs";
+import { env } from "process";
 import { EnvProps } from "src/global/types";
 class Parser {
   private file: string;
@@ -7,19 +8,42 @@ class Parser {
     this.file = filePath;
   }
 
-  private parseFile(): object {
+  private parseFile(): EnvProps {
     const file = fs.readFileSync(this.file, "utf8");
-    return JSON.parse(file);
+    return JSON.parse(file) as EnvProps;
   }
 
-  public getProps(): object {
+  public getProps(): EnvProps {
     const obj = this.parseFile();
     this.struc = {
       name: obj.name,
       env: {
         NODE_ENV: obj.env.NODE_ENV,
       },
-      settings: {},
+      settings: {
+        cache: {
+          enabled: obj.settings.cache.enabled,
+          forceCheck: obj.settings.cache.forceCheck,
+          expiration: obj.settings.cache.expiration,
+          db: obj.settings.cache.db,
+        },
+        database: {
+          host: obj.settings.database.host,
+          port: obj.settings.database.port,
+          user: obj.settings.database.user,
+          password: obj.settings.database.password,
+          database: obj.settings.database.database,
+        },
+        server: {
+          port: obj.settings.server.port,
+          host: obj.settings.server.host,
+          locations: obj.settings.server.locations,
+        },
+        storage: {
+          host: obj.settings.storage.host,
+          port: obj.settings.storage.port,
+        },
+      },
     };
 
     return this.struc;
