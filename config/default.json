@@ -21,20 +21,20 @@
     },
 
     "database": {
-      "host": "env.database.host",
-      "port": "env.database.port",
-      "database": "env.database.name",
-      "username": "env.database.username",
-      "password": "env.database.password"
+      "host": "localhost",
+      "port": "27017",
+      "database": "pods",
+      "username": "bigBoss",
+      "password": "Monet10880"
     },
     "server": {
-      "host": "env.server.host",
-      "port": "env.server.port",
-      "location": "env.server.location"
+      "host": "localhost",
+      "port": "4041",
+      "location": "*"
     },
     "storage": {
-      "host": "env.storage.host",
-      "port": "env.storage.port"
+      "host": "localhost",
+      "port": "4041"
     }
   }
 }

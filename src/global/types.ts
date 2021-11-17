@@ -1,7 +1,7 @@
 export type EnvProps = {
   name: string;
   env: {
-    [key: string]: string;
+    NODE_ENV: string;
   };
   settings: {
     cache: {
